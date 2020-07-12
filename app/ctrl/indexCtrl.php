@@ -5,7 +5,7 @@ class indexCtrl extends \core\stark {
 		$model = new \core\lib\model();
 		$sql = 'select * from stark';
 		$res = $model->query($sql);
-		p($res->fetchAll(\PDO::FETCH_ASSOC));
+		//p($res->fetchAll(\PDO::FETCH_ASSOC));
 
 
 		$data = 'hello,world';
