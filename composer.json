@@ -7,7 +7,7 @@
         "laravel"
     ],
 	"require": {
-        "php": ">= 5.3.0",
-        "filp/whoops": "*"
-    }
+        "php": "^7.0",
+        "filp/whoops": "*",
+    },
 }
