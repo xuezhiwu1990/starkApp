@@ -9,8 +9,14 @@ class conf {
 		if(isset(self::$conf[$file])){
 			return self::$conf[$file][$name];
 		}else{
-			p(1);
-			$path = STARK .'/core/config/'.$file.'.php';
+
+			if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+				$path = STARK .'/core/config_dev/'.$file.'.php';
+			}else{
+				$path = STARK .'/core/config_web/'.$file.'.php';
+			}
+
+			
 			if(is_file($path)){
 				$conf = include $path;
 				if(isset($conf[$name])){
