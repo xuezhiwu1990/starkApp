@@ -37,13 +37,17 @@ class conf {
 		if(isset(self::$conf[$file])){
 			return self::$conf[$file];
 		}else{
-			$path = STARK .'/core/config/'.$file.'.php';
+			if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+				$path = STARK .'/core/config_dev/'.$file.'.php';
+			}else{
+				$path = STARK .'/core/config_web/'.$file.'.php';
+			}
 			if(is_file($path)){
 				$conf = include $path;
 				self::$conf[$file] = $conf;
 				return $conf;
 			}else{
-				throw new Exception('找不到配置文件'.$file );
+				throw new \Exception('找不到配置文件'.$file );
 			}
 
 		}

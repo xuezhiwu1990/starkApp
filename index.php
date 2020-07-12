@@ -7,6 +7,9 @@
  * 2.加载函数库
  * 3.启动框架
  **/
+
+
+
 date_default_timezone_set('Asia/Shanghai');
 define('STARK', realpath('./'));
 define('CORE', STARK.DIRECTORY_SEPARATOR.'core');
@@ -16,9 +19,7 @@ define('MODULE', 'app');
 include './vendor/autoload.php';
 
 define('DEBUG', true);
-
 if(DEBUG){
-
 	$whoops = new \Whoops\Run;
 	$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 	$whoops->register();
@@ -26,7 +27,6 @@ if(DEBUG){
 }else{
 	ini_set('display_error', 'Off');
 }
-
 include CORE.DIRECTORY_SEPARATOR.'common'.DIRECTORY_SEPARATOR.'function.php';
 include CORE.DIRECTORY_SEPARATOR.'stark.php';
 spl_autoload_register('\core\stark::load');
