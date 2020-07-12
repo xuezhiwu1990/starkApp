@@ -17,7 +17,7 @@ define('APP', STARK.DIRECTORY_SEPARATOR.'app');
 define('MODULE', 'app');
 include './vendor/autoload.php';
 
-define('DEBUG', true);
+define('DEBUG', false);
 if(DEBUG){
 	ini_set('display_error', 'On');
 }else{
@@ -29,7 +29,6 @@ if( $_SERVER['SERVER_ADDR'] == '127.0.0.1' ){
 	$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 	$whoops->register();
 }
-
 include CORE.DIRECTORY_SEPARATOR.'common'.DIRECTORY_SEPARATOR.'function.php';
 include CORE.DIRECTORY_SEPARATOR.'stark.php';
 spl_autoload_register('\core\stark::load');
