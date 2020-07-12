@@ -1,0 +1,13 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+	"require": {
+        "php": " >= 5.6.0 ",
+        "filp/whoops": "*",
+    },
+}
