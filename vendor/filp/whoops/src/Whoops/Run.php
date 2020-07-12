@@ -320,7 +320,7 @@ class Run
 //throw new ErrorException('sssss');
             // XXX we pass $level for the "code" param only for BC reasons.
             // see https://github.com/filp/whoops/issues/267
-            $exception = new Exception($message, /*code*/ $level, /*severity*/ $level, $file, $line);
+            $exception = new \Exception($message, /*code*/ $level, /*severity*/ $level, $file, $line);
 
             if ($this->canThrowExceptions) {
                 throw $exception;
