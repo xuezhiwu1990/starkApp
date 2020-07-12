@@ -24,12 +24,12 @@ if(DEBUG){
 	ini_set('display_error', 'Off');
 }
 
-if($_SERVER['REMOTE_ADDR'] == '127.0.0.1' && DEBUG == true ){
+if( $_SERVER['SERVER_ADDR'] == '127.0.0.1' ){
 	$whoops = new \Whoops\Run;
 	$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 	$whoops->register();
 }
-wwww();
+
 include CORE.DIRECTORY_SEPARATOR.'common'.DIRECTORY_SEPARATOR.'function.php';
 include CORE.DIRECTORY_SEPARATOR.'stark.php';
 spl_autoload_register('\core\stark::load');
