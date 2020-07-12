@@ -9,5 +9,6 @@
 	"require": {
         "php": "^7.0",
         "filp/whoops": "*",
+        "symfony/var_dumper":"*"
     },
 }
