@@ -13,9 +13,15 @@ define('CORE', STARK.DIRECTORY_SEPARATOR.'core');
 define('APP', STARK.DIRECTORY_SEPARATOR.'app');
 define('MODULE', 'app');
 
+include './vendor/autoload.php';
+
 define('DEBUG', true);
 
 if(DEBUG){
+
+	$whoops = new \Whoops\Run;
+	$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+	$whoops->register();
 	ini_set('display_error', 'On');
 }else{
 	ini_set('display_error', 'Off');
