@@ -9,8 +9,8 @@ class stark
 		$route = new \core\lib\route();
 		$ctrlClass = $route->ctrl;
 		$action = $route->action;
-		$ctrlfile = APP.'/ctrl/'.$ctrlClass.'Ctrl.php';
-		$cltrlClass = '\\'.MODULE.'\ctrl\\'.$ctrlClass.'Ctrl';
+		$ctrlfile = APP.'/controller/'.$ctrlClass.'Ctrl.php';
+		$cltrlClass = '\\'.MODULE.'\controller\\'.$ctrlClass.'Ctrl';
 		if(is_file( $ctrlfile )){
 			include $ctrlfile;
 			$ctrl = new $cltrlClass();
@@ -23,7 +23,7 @@ class stark
 		}
 	}
 
-	static public function load($class){
+	static public function Autoload($class){
 		//自动加载类库
 		if(isset($classMap[$class])){
 			return true;
