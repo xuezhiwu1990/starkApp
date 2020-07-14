@@ -13,11 +13,19 @@ class ComposerStaticInitc8f182e97867e7fbc37efa884c12a4a8
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Whoops\\' => 7,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
+        ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
         ),
         'M' => 
         array (
@@ -26,6 +34,10 @@ class ComposerStaticInitc8f182e97867e7fbc37efa884c12a4a8
     );
 
     public static $prefixDirsPsr4 = array (
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -38,19 +50,13 @@ class ComposerStaticInitc8f182e97867e7fbc37efa884c12a4a8
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Medoo\\' => 
         array (
             0 => __DIR__ . '/..' . '/catfan/medoo/src',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'W' => 
-        array (
-            'Whoops' => 
-            array (
-                0 => __DIR__ . '/..' . '/filp/whoops/src',
-            ),
         ),
     );
 
@@ -64,7 +70,6 @@ class ComposerStaticInitc8f182e97867e7fbc37efa884c12a4a8
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitc8f182e97867e7fbc37efa884c12a4a8::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitc8f182e97867e7fbc37efa884c12a4a8::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc8f182e97867e7fbc37efa884c12a4a8::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitc8f182e97867e7fbc37efa884c12a4a8::$classMap;
 
         }, null, ClassLoader::class);
