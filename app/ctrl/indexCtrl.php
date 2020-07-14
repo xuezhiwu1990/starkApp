@@ -17,8 +17,6 @@ class indexCtrl extends \core\stark {
 		$temp = \core\lib\conf::get('CTRL','config');
 		$temp = \core\lib\conf::get('CTRL','config');
 		$temp = \core\lib\conf::get('CTRL','config');
-		var_dump($temp);
-
 		$this->display('index.html');
 	}
 
