@@ -4,6 +4,7 @@
  * author stark
  * 2020-7-14
  **/	
+ 
 date_default_timezone_set('Asia/Shanghai');
 define('STARK', realpath('./'));
 define('CORE', STARK.DIRECTORY_SEPARATOR.'core');
@@ -13,9 +14,9 @@ include './vendor/autoload.php'; //引入compser
 
 //dev web6 use Whoops
 if( $_SERVER['SERVER_ADDR'] == '127.0.0.1' ){
-	$whoops = new \Whoops\Run;
-	$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-	$whoops->register();
+// 	$whoops = new \Whoops\Run;
+// 	$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+// 	$whoops->register();
 }
 
 define('DEBUG', false);

@@ -1,6 +1,7 @@
 <?php
 /**
- * 路由类
+ * 路由类 1.要隐藏index.php 
+ * try_files $uri $uri/ /index.html?$query_string;
  */
 namespace core\lib;
 use \core\lib\log;
@@ -13,7 +14,6 @@ class route
 		//2.获取url参数部分
 		//3.返回对应的控制器和方法
 		$uri = $_SERVER['REQUEST_URI'];
-
 		if(isset($uri) && $uri != '/'){
 			$urlLog['uri'] = $uri;
 			$urlLog['params'] = $_REQUEST;
