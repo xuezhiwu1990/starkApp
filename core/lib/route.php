@@ -32,14 +32,14 @@ class route
 			}
 
 			//返回剩下的参数
-			$count = count($pathArr) + 2;
-			$i = 2;
-			while ( $i < $count ) {
-				if(isset($pathArr[$i + 1])) {
-					$_GET[$pathArr[$i]] = $pathArr[$i+1];
-				}
-				$i = $i + 2;
-			}
+			// $count = count($pathArr) + 2;
+			// $i = 2;
+			// while ( $i < $count ) {
+			// 	if(isset($pathArr[$i + 1])) {
+			// 		$_GET[$pathArr[$i]] = $pathArr[$i+1];
+			// 	}
+			// 	$i = $i + 2;
+			// }
 		}else{
 			$this->ctrl = 'index';
 			$this->action = 'index';

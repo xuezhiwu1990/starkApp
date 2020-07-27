@@ -12,6 +12,7 @@ class stark
 	 */
 	static public function run(){
 		\core\lib\log::init();	
+
 		$route = new \core\lib\route();
 		$ctrlClass = $route->ctrl;
 		$action = $route->action;
