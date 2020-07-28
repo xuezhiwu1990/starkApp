@@ -22,35 +22,41 @@ class adminCtrl extends controller {
 		$params = $this->_request(['name']);
 		$solt = conf::get('MD5_SOLT','decrypt');
 
-		$ad_password = $this->model->getAccountInfo($params['username']);
-
-		if(!$ad_password){
+		$accountInfo = $this->model->getAccountInfo($params['username']);
+		
+		if(empty($accountInfo)){
 			$result['status'] = 403;
             $result['msg'] = '账户输入不正确~';
             $this->jsonResult($result);
 		}
 
 		$password = md5($params['password'].$solt );
-        if($password != $ad_password){
+        if($password != $accountInfo['ad_password']){
             $result['status'] = 403;
             $result['msg'] = '密码不正确';
             $this->jsonResult($result);
         }
 
-
-        //账户和密码都正确，写入session
-        $key = md5('STARK-HN001-%^&*');
+        $token_key = conf::get('TOKEN_KEY','decrypt');
+        $key = md5($token_key);
         $time = time() + 3600*8;
-        setcookie("Auth_".$key, base64_encode($ad_password), $time,'/','.stark.com',false);
+        setcookie("Auth_".$key, base64_encode(json_encode($accountInfo)), $time,'/','.stark.com',false);
+        setcookie("ZhiD_Token", base64_encode(json_encode($accountInfo)), $time,'/','.stark.com',false);
         $result['status'] = 200;
         $result['msg'] = '账号正常使用，欢迎'.$params['username'];
         $result['data']['key'] = $key;
+        $result['data']['access'] = base64_encode(json_encode($accountInfo));
         $this->jsonResult($result);
 	}
 
 
 	public function getTest(){
 		var_dump($_COOKIE,$_SESSION);
+	}
+
+
+	public function addShop(){
+		
 	}
 
 }
