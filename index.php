@@ -19,7 +19,9 @@ if( $_SERVER['SERVER_ADDR'] == '127.0.0.1' ){
 	$whoops->register();
 }
 
-define('DEBUG', false);
+
+
+define('DEBUG', true);
 if(DEBUG){
 	ini_set('display_error', 'On');
 }else{

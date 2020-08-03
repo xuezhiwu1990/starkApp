@@ -9,4 +9,5 @@ class redis {
 	public function __construct(){
 		
 	}
+
 }

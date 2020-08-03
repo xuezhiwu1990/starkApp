@@ -6,6 +6,7 @@ class adminCtrl extends controller {
 	
 	protected $base_encry = true;
 	protected $model;
+	protected $shopModel;
 
 	public function __construct(){
 
@@ -13,6 +14,7 @@ class adminCtrl extends controller {
 		
 		if( $this->model == NULL ){
 			$this->model = new \app\model\adminModel();
+			$this->shopModel = new \app\model\shopModel();
 		}
 	}
 
@@ -48,15 +50,4 @@ class adminCtrl extends controller {
         $result['data']['access'] = base64_encode(json_encode($accountInfo));
         $this->jsonResult($result);
 	}
-
-
-	public function getTest(){
-		var_dump($_COOKIE,$_SESSION);
-	}
-
-
-	public function addShop(){
-		
-	}
-
 }

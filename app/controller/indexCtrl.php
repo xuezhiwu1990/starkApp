@@ -21,6 +21,11 @@ $time = time() + 60*10;
 		var_dump($_COOKIE,$_SESSION);
 	}
 
+
+	public function uploadImage(){
+		echo '{ "code": 0 ,"msg": "" ,"data": { "src": "http://ironman.zhuangbfan.com/upload/image/202008/20200803033303tkx6rv.png"}}';
+		
+	}
 }
 
 
